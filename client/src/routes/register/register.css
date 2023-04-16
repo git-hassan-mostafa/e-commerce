@@ -1,0 +1,42 @@
+:root{
+    --backColor:#17202A;
+    --color:#EAECEE
+}
+
+
+
+.register{
+    display: flex;
+    min-height: 80vh;
+    justify-content: space-between;
+    background-color: var(--color);
+}
+img{
+    width: 45%;
+    object-fit: cover;
+    object-position: 0px;
+    max-height: 80vh;
+}
+.register .auth_page{
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    background-color: var(--color);
+    /* margin-top: 50px; */
+}
+.nav_links{
+    display: flex;
+    width: 70%;
+    text-align: center;
+    gap: 2px;
+}
+@media (max-width:767px) {
+    .register> img{
+        display: none;
+    }
+    .register .auth_page{
+        margin-top: 20px;
+    }
+}

@@ -1,0 +1,8 @@
+.products-sliders-by-categories > h2 > .link > button.category-show-more{
+    background-color: var(--back-color);
+    color: var(--color);
+    padding: 10px;
+    border: 0;
+    border-radius: 20px;
+
+}

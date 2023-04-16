@@ -1,0 +1,45 @@
+.supplier-product{
+    margin-top: 10px;
+}
+
+.supplier-product > .supplier-product-display{
+    display: flex; 
+    gap: 10px;
+    flex-direction: column;
+    width: 100%;
+    margin: auto;
+}
+.supplier-product > .supplier-product-display p.price{
+    color: var(--back-color);
+    margin: 0;
+    margin-top: 10px;
+    padding: 10px;
+    background-color: var(--back-color);
+    width: fit-content;
+    color: var(--color);
+    border-radius: 10px;
+    font-size: medium;
+}
+.supplier-product > .supplier-product-display h3.quantity{
+    color: var(--back-color);
+    margin: 0;
+    margin-top: 10px;
+    color: var(--back-color);
+    width: fit-content;
+    border-radius: 10px;
+    font-size: medium;
+}
+
+.supplier-product > .supplier-product-display button.delete-from-ordered-list{
+    height:fit-content;
+    padding: 10px;
+    border-radius: 5px;
+    border: 0;
+    color: white;
+}
+.supplier-product > .supplier-product-display .more-details{
+    white-space: nowrap;
+    color: var(--color);
+    background-color: var(--back-color);
+    padding: 10px;
+}

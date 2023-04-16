@@ -1,0 +1,8 @@
+main{
+    padding: 5px;
+}
+main .list-by-categories{
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+}

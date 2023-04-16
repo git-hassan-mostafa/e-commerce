@@ -1,0 +1,103 @@
+form.add-product {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    color: var(--back-color);
+    gap: 10px;
+    width: 70%;
+}
+
+
+img.images-preview {
+    width: 100%;
+    height: 100%;
+}
+
+form.add-product>.img {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+form.add-product>.img img {
+    width: 100px;
+    border-radius: 50%;
+    height: 100px;
+    object-fit: cover;
+    object-position: center;
+}
+
+form.add-product label {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+form.add-product>input:not(input[type='file']) {
+    width: 100%;
+    padding: 15px 10px;
+    border: none;
+    border-radius: 5px 0 0 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    outline: none;
+    margin-bottom: 20px;
+}
+
+input[type='file']:last-of-type:-webkit-file-upload-button {
+    padding: 10px;
+    border: none;
+    background-color: var(--back-color);
+    color: var(--color);
+    font-size: 15px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+input[type='file']:last-of-type {
+    color: transparent;
+}
+
+input[type="file"].first-input-file{
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+}
+
+  input[type="file"].first-input-file{
+    /* opacity: 0; */
+    /* position: absolute; */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+    /* visibility: hidden; */
+  }
+  
+  input[type="file"].first-input-file:-webkit-file-upload-button {
+    display: none;
+  }
+  
+  input[type="file"].first-input-file:before {
+    content: 'Choose a file';
+    display: inline-block;
+    background-color: #2196f3;
+    color: #fff;
+    padding: 8px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  input[type="file"].first-input-file::before {
+    background-color: #1976d2;
+  }
+
+.succeeded {
+    color: var(--back-color);
+}
+
+.failed {
+    color: red
+}

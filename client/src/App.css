@@ -1,0 +1,115 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap');
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: var(--color);
+    overflow: auto;
+}
+
+:root {
+    --back-color: #17202A;
+    --color: #EAECEE;
+}
+
+.back-color {
+    color: var(--back-color);
+}
+
+.color {
+    color: var(--color);
+}
+
+.MuiAvatar-img {
+    object-fit: cover;
+    object-position: center;
+}
+
+.progress-circule {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.progress-circule>.progress-circule-icon {
+    color: var(--back-color);
+}
+
+.message {
+    color: var(--back-color);
+}
+
+.error {
+    color: rgb(161, 17, 17);
+}
+
+* {
+    box-sizing: border-box;
+}
+
+.link {
+    text-decoration: none;
+    color: inherit;
+}
+
+.upContainer {
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+}
+
+.container {
+    width: 100%;
+    margin: auto;
+    padding: 5px;
+}
+
+@media (min-width:600px) {
+    .container {
+        width: 600px;
+    }
+}
+
+@media (min-width:767px) {
+    .container {
+        width: 700px;
+    }
+}
+
+@media (min-width:900px) {
+    .container {
+        width: 850px;
+    }
+}
+
+@media (min-width:1100px) {
+    .container {
+        width: 1000px;
+    }
+}
+
+.listItem {
+    display: flex;
+    align-items: center;
+}
+
+@media (max-width:768px) {
+    .listItem {
+        flex-direction: column;
+    }
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+    color: var(--color);
+
+
+}
+
+.swiper-button-next::after,
+.swiper-button-prev::after {
+    padding: 10px;
+    background-color: var(--back-color);
+    border-radius: 10px;
+    font-size: 30px;
+}

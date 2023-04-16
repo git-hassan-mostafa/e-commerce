@@ -1,0 +1,177 @@
+body {
+    width: 100%;
+    margin: 0;
+}
+
+* {
+    box-sizing: border-box;
+    transition-duration: .4s;
+}
+
+button {
+    cursor: pointer;
+}
+.--side-bar .black-block{
+    background-color: black;
+    width: 100vw;
+    height: 100vh;
+    opacity: 0.5;
+    position: absolute;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index:990;
+}
+@media (min-width:767px) {
+    .--side-bar .black-block{
+        cursor: pointer;
+    }
+}
+header {
+    background-color: var(--color);
+    display: flex;
+    justify-content: center;
+    padding: 5px;
+    background-color: #D5D8DC;
+}
+
+header .header {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    gap: 50px;
+}
+
+.header_logo {
+    display: grid;
+    place-content: center;
+    width: fit-content;
+}
+
+.header_logo img {
+    width: 50px;
+}
+
+header .header_search {
+    flex: 1;
+    display: flex;
+}
+
+header .header_search>button {
+    border: 0;
+    background-color: var(--back-color);
+    color: var(--color);
+    font-size: large;
+    padding: 10px;
+    font-weight: bolder;
+}
+
+header .header_search button:hover {
+    color: white;
+}
+
+header .header_search input {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    /* border-radius: 50px 0 0 50px; */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    outline: none;
+}
+
+header nav ul {
+    display: flex;
+    gap: 20px;
+}
+
+header nav ul li {
+    list-style: none;
+    color: var(--back-color);
+    cursor: pointer;
+}
+
+header nav ul li:hover {
+    color: black;
+}
+
+@media (max-width:768px) {
+    header .header {
+        gap: 10px;
+    }
+
+    header nav {
+        display: none;
+    }
+
+    .header_logo img {
+        width: 40px;
+    }
+}
+
+.registerDiv {
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+    align-items: center;
+    /* margin-left: 20px; */
+}
+
+.registerDiv .signup {
+    padding: 7px 10px;
+    /* border-radius: 5px; */
+    text-decoration: none;
+    border: 1px solid var(--back-color);
+
+    color: var(--back-color);
+    font-size: small;
+}
+
+.registerDiv .login,
+button.logout {
+    padding: 7px 10px;
+    /* border-radius: 5px; */
+    border: 1px solid var(--back-color);
+    text-decoration: none;
+    background-color: var(--back-color);
+    color: var(--color);
+    font-size: small;
+}
+
+.signup:hover,
+button.logout:hover {
+    color: black;
+    background-color: transparent;
+    border: 1px solid var(--back-color);
+
+}
+
+.registerDiv>.link {
+    width: 50px;
+    height: 50px;
+}
+
+.registerDiv > .link > .profile {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+}
+
+@media (max-width:768px) {
+    header .header {
+        gap: 20px;
+    }
+
+    .registerDiv {
+        gap: 10px;
+    }
+
+    .registerDiv > .link{
+        width: 45px;
+        height:45px;
+    }
+    .registerDiv >.link > .profile {
+        width: 100%;
+        height: 100%;
+    }
+}

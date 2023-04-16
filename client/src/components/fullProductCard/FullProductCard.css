@@ -1,0 +1,71 @@
+article.card-design {
+    color: var(--back-color);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: white;
+    gap: 10px;
+    font-size: 16px;
+    position: relative;
+    width: 100%;
+}
+
+article.card-design > img{
+    width: 100%;
+    height: 180px; 
+    object-fit: cover;
+    object-position: center;
+}
+article.card-design > .product-rating-button{
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+article.card-design > .product-rating-button > .link > button{
+    background-color: transparent;
+    color: var(--back-color);
+    border: 1px solid var(--back-color);
+    border-radius: 20px;
+    padding: 5px;
+    width: 100%;
+    white-space: nowrap;
+}
+article.card-design > h4,
+.card-design > p {
+    margin: 0;
+}
+
+article.card-design > .discount-price {
+    background-color: green;
+    position: absolute;
+    color: var(--color);
+    padding: 5px 10px;
+    left:0 ;
+}
+article.card-design > .total-price {
+    background-color: rgb(124, 26, 26);
+    position: absolute;
+    color: var(--color);
+    padding: 5px 10px;
+    right:0 ;
+    text-decoration: line-through;
+}
+article.card-design > .price >p{
+    margin: 0;
+}
+article.card-design > p{
+    font-size: 10px;
+    color: gray;
+}
+article.card-design > .price > .total-price {
+    text-decoration: line-through;
+
+}
+
+article.card-design > .add-to-card {
+    padding: 15px 10px;
+    color: var(--color);
+    border: 0;
+    font-weight: 500;
+    width: 100%;
+}

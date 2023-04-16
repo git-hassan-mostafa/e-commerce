@@ -1,0 +1,62 @@
+
+form.auth{
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    color:var(--back-color);
+    gap: 10px;
+    width: 70%;
+}
+form.auth h2{
+    text-align: center;
+}
+form.auth >.img{
+   width: 100%;
+   display: flex;
+   justify-content: center;
+}
+form.auth>.img img{
+    width: 100px;
+    border-radius: 50%;
+    height: 100px;
+    object-fit: cover;
+    object-position: center;
+}
+form.auth label{
+    font-size: 20px;
+    font-weight: bold;
+}
+form.auth > input:not(input[type='file']){
+    width: 100%;
+    padding: 15px 10px  ;
+    border: none;
+    border-radius: 5px 0 0 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    outline: none;
+    margin-bottom: 20px;
+}
+form.auth button{
+    padding: 10px;
+    border: none;
+    background-color: var(--back-color);
+    color: var(--color);
+    font-size: 15px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+input[type='file']::-webkit-file-upload-button{
+    padding: 10px;
+    border: none;
+    background-color: var(--back-color);
+    color: var(--color);
+    font-size: 15px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+input[type='file']{
+    color: transparent;
+}
+.succeeded{
+    color: var(--back-color);
+}
+.failed{
+    color:red
+}
