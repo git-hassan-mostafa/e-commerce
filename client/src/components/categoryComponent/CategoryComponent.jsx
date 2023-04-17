@@ -8,7 +8,6 @@ import { Link } from 'react-router-dom'
 import { BASE_URL } from '../../variables.env';
 
 const CategoryComponent = ({ data }) => {
-  // console.log(data)
   const date = new Date(data?.createdAt); // Convert the string to a Date object
   const options = { weekday: 'long', year: 'numeric', month: 'numeric', day: 'numeric', hour: 'numeric' }; // Define the format options
 

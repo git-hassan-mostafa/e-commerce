@@ -97,7 +97,6 @@ const ProductDetails = () => {
             setShowRatingMessage(false)
         }, 3000)
     }
-    console.log(state?.images[0]?.filename)
     return (
         <div className="container">
             <div className="productSwiperContainer">

@@ -73,7 +73,6 @@ const AddProduct = () => {
             }
             const responseData = await response.json()
             setData(responseData)
-            console.log(responseData)
             return data
         }
         catch (error) {
@@ -107,7 +106,6 @@ const AddProduct = () => {
     const handleSubmit = async (event) => {
         const formData = new FormData();
         event.preventDefault();
-        console.log(title, description, price, discountPrice, category, quantity, photo, images)
         if (!(title && description && price && discountPrice && category && quantity && photo) || images.length < 1) {
             setErrorMessage('all fields are required')
             setOpen(true)
@@ -131,7 +129,6 @@ const AddProduct = () => {
 
         setIsFetching(true)
         await fetchAddProduct(formData)
-        console.log(data)
         setIsFetching(false)
         setOpen(true)
         setTimeout(() => {

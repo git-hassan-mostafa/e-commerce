@@ -10,24 +10,21 @@ import { AiOutlineShoppingCart } from 'react-icons/ai'
 import { FaProductHunt } from 'react-icons/fa'
 import Avatar from '@mui/material/Avatar';
 import { BASE_URL } from '../../variables.env'
-import { fetchData } from '../../hooks/hooks'
+import { CircularProgress } from '@mui/material'
 const SideBar = () => {
     const dispatch = useDispatch()
     const navigate = useNavigate()
 
-
     const handleLogout = async () => {
-        const res = await fetch(`http://localhost:8000/api/v1/auth/logout`, {
+        await fetch(`${BASE_URL}/api/v1/auth/logout`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
             },
             credentials: 'include',
         })
-        const data = await res.json()
-        console.log(data)
         dispatch(logout())
-        // dispatch(fetchUser())
+        dispatch(fetchUser())
         navigate('/home')
         dispatch(togglingSideBar())
     }

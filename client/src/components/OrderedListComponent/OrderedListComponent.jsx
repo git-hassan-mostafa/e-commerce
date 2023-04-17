@@ -42,7 +42,6 @@ const OrderedListComponent = ({ data, refetch }) => {
     await removingRefetch();
     refetch()
     setOpen(true)
-    console.log(removeData?.message || removeData?.error)
   }
   return (
     <>

@@ -31,10 +31,8 @@ const Login = () => {
             }
             const data = await response.json()
             setData(data)
-            console.log(data)
             if (data?.message) {
                 await dispatchRedux(fetchUser())
-                console.log(status)
                 navigate('/home')
             }
             return data

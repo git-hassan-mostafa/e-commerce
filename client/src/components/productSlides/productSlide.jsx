@@ -5,7 +5,6 @@ import { BASE_URL } from '../../variables.env'
 
 
 const ProductSlide = ({data}) => {
-  console.log(data?.photo?.filename)
   return (
     <div className='product-slide' style={{
       backgroundImage:`url(${BASE_URL}/${data?.photo?.filename})`

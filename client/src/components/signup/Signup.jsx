@@ -30,10 +30,8 @@ const Signup = () => {
                 console.error('not ok')
             }
             const data = await response.json()
-            console.log(data)
             if (data?.message) {
                 await dispatching(fetchUser())
-                console.log(status)
                 navigate('/home')
             }
             return data

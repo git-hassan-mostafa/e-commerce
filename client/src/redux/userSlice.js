@@ -30,7 +30,6 @@ export const fetchUser = createAsyncThunk('user/fetchUser', async () => {
     credentials: 'include'
   })
   const data = await response.json()
-  console.log(data)
   return data
 })
 export const { logout , toggleSideBar } = userSlice.actions
