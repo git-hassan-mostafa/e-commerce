@@ -88,11 +88,22 @@ const login = async (req, res) => {
             maxAge: 24 * 30 * 60 * 60 * 1000,
             secure: true
         }).status(200).json({ message: 'logged in ' })
+        
     } catch (error) {
         return res.status(401).json({ error })
     }
 
 }
-
-
-module.exports = { createUser, login, uploadPhoto }
+const logout=(req,res,next)=>{
+    try {
+        return res.cookie('access_token', '', {
+            sameSite:'none',
+            httpOnly: true,
+            maxAge: 24 * 30 * 60 * 60 * 1000,
+            secure: true
+        }).status(200).json({ message: 'logged out ' })
+    } catch (error) {
+        res.status(404).json({error})
+    }
+}
+module.exports = { createUser, login, uploadPhoto,logout }

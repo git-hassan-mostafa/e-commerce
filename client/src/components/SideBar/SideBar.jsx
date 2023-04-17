@@ -10,16 +10,26 @@ import { AiOutlineShoppingCart } from 'react-icons/ai'
 import { FaProductHunt } from 'react-icons/fa'
 import Avatar from '@mui/material/Avatar';
 import { BASE_URL } from '../../variables.env'
+import { fetchData } from '../../hooks/hooks'
 const SideBar = () => {
     const dispatch = useDispatch()
     const navigate = useNavigate()
-    const handleLogout = () => {
+
+
+    const handleLogout = async () => {
+        const res = await fetch(`http://localhost:8000/api/v1/auth/logout`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            credentials: 'include',
+        })
+        const data = await res.json()
+        console.log(data)
         dispatch(logout())
-        document.cookie = "access_token=;domain:renderecommerce.onrender.com";
-        dispatch(fetchUser())
+        // dispatch(fetchUser())
         navigate('/home')
         dispatch(togglingSideBar())
-        console.log(document.cookie)
     }
     const { user } = useSelector(state => state.user)
     return (
