@@ -57,6 +57,7 @@ const createUser = async (req, res) => {
 
             return res.cookie('access_token', token, {
                 httpOnly: true,
+                domain:'localhost',
                 maxAge: 24 * 30 * 60 * 60 * 1000,
                 secure: true,
                 sameSite:'none'
@@ -84,6 +85,7 @@ const login = async (req, res) => {
         const token = createToken(user?._id, user?.isAdmin, user?.supplier)
         return res.cookie('access_token', token, {
             sameSite:'none',
+            domain:'localhost',
             httpOnly: true,
             maxAge: 24 * 30 * 60 * 60 * 1000,
             secure: true

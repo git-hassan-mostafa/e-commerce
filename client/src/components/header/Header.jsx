@@ -18,14 +18,17 @@ const Header = () => {
   const [inputValue, setInputValue] = useState('')
   const navigate = useNavigate()
 
-  const handleSubmit = async (e) => {
-    await e.preventDefault();
+  const handleSubmit = (e) => {
+    e.preventDefault();
     if (inputValue.length < 1) return
-    else navigate(`products/search/${inputValue}`)
+    navigate('/home')
+    setTimeout(() => {
+      navigate(`products/search/${inputValue}`)
+    }, 0);
   }
   const { toggleSideBar } = useSelector(state => state.state)
   const dispatch = useDispatch()
-  const theme=useTheme()
+  const theme = useTheme()
   return (
     <>
       {
@@ -58,7 +61,7 @@ const Header = () => {
                       user?.data?.photo?.filename ?
                         <img className='profile' src={`${BASE_URL}/${user?.data?.photo?.filename}`} alt="" />
                         : <Avatar sx={{
-                          bgcolor:theme.palette.primary.main
+                          bgcolor: theme.palette.primary.main
                         }} className='profile'> {user?.data?.firstname?.charAt(0).toUpperCase()} </Avatar>
                     }
                   </Link>

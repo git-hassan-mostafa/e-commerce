@@ -13,10 +13,6 @@ const Search = () => {
   const { data, isLoading, isFetching, loadMore, refetch, hasNext } = useInfiniteFetching(`${BASE_URL}/api/v1/products/search/searchvalue`, `maxPrice=1200&minPrice=60&minRating=3&demandedQuantity=60&search=${p}`)
 
   useEffect(() => {
-    refetch()
-  }, [p])
-
-  useEffect(() => {
     window.addEventListener('scroll', function () {
       // Get the height of the document, accounting for scroll position
       const documentHeight = document.documentElement.scrollHeight;
