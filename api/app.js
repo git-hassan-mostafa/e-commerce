@@ -47,9 +47,9 @@ app.use('/api/v1', orderRoutes)
 // app.get('*', function (req, res) {
 //     res.sendFile(path.join(__dirname, '/dist/index.html'));
 // });
-// app.get('/', (req, res) => {
-//     res.send('hello')
-// })
+app.get('/', (req, res) => {
+    res.send('hello this is my e commerce backend')
+})
 
 
 //connect to the data base
