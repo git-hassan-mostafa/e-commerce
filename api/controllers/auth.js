@@ -57,11 +57,9 @@ const createUser = async (req, res) => {
 
             return res.cookie('access_token', token, {
                 httpOnly: true,
-                domain: 'localhost',
-                path: '/',
                 maxAge: 24 * 30 * 60 * 60 * 1000,
                 secure: true,
-                sameSite: 'none'
+                sameSite:'none'
             }).status(200).json({ message: 'user created' })
         }
     } catch (error) {
@@ -85,9 +83,7 @@ const login = async (req, res) => {
         if (!isCorrectPassword) return res.status(404).json({ error: 'wrong password' })
         const token = createToken(user?._id, user?.isAdmin, user?.supplier)
         return res.cookie('access_token', token, {
-            domain: 'localhost',
-            path: '/',
-            sameSite: 'none',
+            sameSite:'none',
             httpOnly: true,
             maxAge: 24 * 30 * 60 * 60 * 1000,
             secure: true
