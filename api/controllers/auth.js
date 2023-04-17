@@ -60,6 +60,7 @@ const createUser = async (req, res) => {
                 httpOnly:true,
                 sameSite:'none',
                 maxAge: 24 * 30 * 60 * 60 * 1000,
+                secure:true
             }).status(200).json({ message: 'user created' })
         }
     } catch (error) {
@@ -87,6 +88,7 @@ const login = async (req, res) => {
             httpOnly:true,
             sameSite:'none',
             maxAge: 24 * 30 * 60 * 60 * 1000,
+            secure:true
         }).status(200).json({ message: 'logged in ' })
     } catch (error) {
         return res.status(401).json({ error })
