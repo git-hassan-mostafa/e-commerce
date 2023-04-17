@@ -1,19 +1,19 @@
-import React, { useRef, useState } from "react";
+import React, { memo } from "react";
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
 
 // Import Swiper styles
 import "swiper/css";
 import "swiper/css/navigation";
-import 'swiper/css/autoplay'
+import 'swiper/css/autoplay';
 // import "./styles.css";
-import './productsSwiper.css'
+import './productsSwiper.css';
 
 // import required modules
 import { Navigation } from "swiper";
 import ProductSlide from "../productSlides/productSlide";
 
-export default function SwiperSlides({ data, isLoading, error, refetch }) {
+export default memo( function  SwiperSlides({ data, isLoading, error, refetch }) {
 
     return (
         <div className="swiperContainer">
@@ -27,4 +27,4 @@ export default function SwiperSlides({ data, isLoading, error, refetch }) {
             </Swiper>
         </div>
     );
-}
+})

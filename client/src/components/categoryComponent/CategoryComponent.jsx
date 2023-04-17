@@ -1,7 +1,7 @@
 import LoadingButton from '@mui/lab/LoadingButton';
 import { Avatar, List, ListItem, ListItemAvatar, ListItemText, Stack } from '@mui/material';
 
-import React from 'react';
+import React, { memo } from 'react';
 
 import iphone from '../../assets/iphone.jpg';
 import { Link } from 'react-router-dom'
@@ -58,4 +58,4 @@ const CategoryComponent = ({ data }) => {
   )
 }
 
-export default CategoryComponent
+export default memo(CategoryComponent) 

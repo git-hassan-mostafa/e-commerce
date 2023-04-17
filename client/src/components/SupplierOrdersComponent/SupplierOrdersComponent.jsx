@@ -1,7 +1,7 @@
 import LoadingButton from '@mui/lab/LoadingButton';
 import { Avatar, List, ListItem, ListItemAvatar, ListItemText, Stack } from '@mui/material';
 
-import React, { useState } from 'react';
+import React, { memo, useState } from 'react';
 
 import { Link } from 'react-router-dom';
 import { BASE_URL } from '../../variables.env';
@@ -61,4 +61,4 @@ const SupplierOrdersComponent = ({ data }) => {
     )
 }
 
-export default SupplierOrdersComponent
+export default memo(SupplierOrdersComponent) 

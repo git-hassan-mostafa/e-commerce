@@ -15,7 +15,7 @@ const SideBar = () => {
     const navigate = useNavigate()
     const handleLogout = () => {
         dispatch(logout())
-        document.cookie = 'access_token=""'    
+        document.cookie = ''    
         dispatch(fetchUser())
         navigate('/home')
         dispatch(togglingSideBar())

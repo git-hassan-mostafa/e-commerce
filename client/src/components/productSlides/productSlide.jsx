@@ -1,6 +1,6 @@
-import React from 'react'
+import React, { memo } from 'react'
 import './productSlide.css'
-import {Link} from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import { BASE_URL } from '../../variables.env'
 
 
@@ -31,4 +31,4 @@ const ProductSlide = ({data}) => {
   )
 }
 
-export default ProductSlide
+export default memo(ProductSlide) 

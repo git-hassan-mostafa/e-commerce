@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { memo, useEffect, useState } from 'react'
 import { SwiperSlide, Swiper } from 'swiper/react'
 import { Navigation } from 'swiper'
 import './productSliders.css'
@@ -49,4 +49,4 @@ const ProductsSliders = ({ data: propData }) => {
     )
 }
 
-export default ProductsSliders
+export default memo(ProductsSliders) 

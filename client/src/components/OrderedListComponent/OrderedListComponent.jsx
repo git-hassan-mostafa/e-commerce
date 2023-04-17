@@ -2,11 +2,10 @@ import LoadingButton from '@mui/lab/LoadingButton';
 import { Alert, Avatar, Box, List, ListItem, ListItemAvatar, ListItemText, Snackbar } from '@mui/material';
 import DeleteIcon from '@mui/icons-material/Delete';
 
-import React, { useState } from 'react'
+import React, { memo, useState } from 'react';
 import { useQuery } from 'react-query';
 import { fetchData } from '../../hooks/hooks';
 
-import iphone from '../../assets/iphone.jpg'
 import { Link } from 'react-router-dom';
 import { Stack } from '@mui/system';
 import { BASE_URL } from '../../variables.env';
@@ -84,4 +83,4 @@ const OrderedListComponent = ({ data, refetch }) => {
   )
 }
 
-export default OrderedListComponent
+export default memo(OrderedListComponent) 

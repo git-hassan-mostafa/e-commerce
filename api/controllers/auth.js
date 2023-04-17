@@ -40,7 +40,7 @@ const createUser = async (req, res) => {
         else if (!validator.isEmail(email)) return res.status(501).json({ error: 'this email is not a valid email' })
         else {
             console.log(req.file)
-            const myPhoto = req.file ;
+            const myPhoto = req.file;
             const saltRounds = 10;
             const salt = bcrypt.genSaltSync(saltRounds);
             const hash = bcrypt.hashSync(password, salt);
@@ -48,19 +48,20 @@ const createUser = async (req, res) => {
                 ...req.body,
                 password: hash,
                 photo: {
-                    filename: req.file? myPhoto.filename:null,
-                    path:req.file? myPhoto.path:null,
+                    filename: req.file ? myPhoto.filename : null,
+                    path: req.file ? myPhoto.path : null,
                 }
             })
             const createdUser = await newUser.save()
             const token = createToken(createdUser._id, createdUser.isAdmin, createdUser.supplier)
 
             return res.cookie('access_token', token, {
-                path:'/',
-                httpOnly:true,
-                sameSite:'none',
+                httpOnly: true,
+                domain: 'localhost',
+                path: '/',
                 maxAge: 24 * 30 * 60 * 60 * 1000,
-                secure:true
+                secure: true,
+                sameSite: 'none'
             }).status(200).json({ message: 'user created' })
         }
     } catch (error) {
@@ -84,11 +85,12 @@ const login = async (req, res) => {
         if (!isCorrectPassword) return res.status(404).json({ error: 'wrong password' })
         const token = createToken(user?._id, user?.isAdmin, user?.supplier)
         return res.cookie('access_token', token, {
-            path:'/',
-            httpOnly:true,
-            sameSite:'none',
+            domain: 'localhost',
+            path: '/',
+            sameSite: 'none',
+            httpOnly: true,
             maxAge: 24 * 30 * 60 * 60 * 1000,
-            secure:true
+            secure: true
         }).status(200).json({ message: 'logged in ' })
     } catch (error) {
         return res.status(401).json({ error })

@@ -1,10 +1,9 @@
 import LoadingButton from '@mui/lab/LoadingButton';
 import { Avatar, List, ListItem, ListItemAvatar, ListItemText, Stack } from '@mui/material';
 
-import React from 'react';
+import React, { memo } from 'react';
 
-import iphone from '../../assets/iphone.jpg';
-import { Link } from 'react-router-dom'
+import { Link } from 'react-router-dom';
 import { BASE_URL } from '../../variables.env';
 
 const SearchComponent = ({ data, refetch }) => {
@@ -57,4 +56,4 @@ const SearchComponent = ({ data, refetch }) => {
   )
 }
 
-export default SearchComponent
+export default memo(SearchComponent) 

@@ -2,7 +2,7 @@ import LoadingButton from '@mui/lab/LoadingButton';
 import { Alert, Avatar, Box, List, ListItem, ListItemAvatar, ListItemText, Snackbar, Stack } from '@mui/material';
 import DeleteIcon from '@mui/icons-material/Delete';
 
-import React, { useState } from 'react'
+import React, { memo, useState } from 'react'
 import { useQuery } from 'react-query';
 import { fetchData } from '../../hooks/hooks';
 
@@ -85,4 +85,4 @@ const CartComponent = ({data,refetch}) => {
     )
 }
 
-export default CartComponent
+export default memo(CartComponent) 
