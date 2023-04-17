@@ -19,7 +19,7 @@ const bodyParser = require('body-parser')
 app.use(express.static('uploads'));
 
 app.use(cors({
-    origin: 'http://localhost:5173',
+    origin: '*',
     credentials: true,
 }))
 
