@@ -6,11 +6,12 @@ import './main.css'
 import { fetchData } from '../../hooks/hooks'
 import ProductsSliders from '../../components/productsSliders/ProductsSliders'
 import { CircularProgress } from '@mui/material'
+import { BASE_URL } from '../../variables.env'
 const Main = () => {
 
-  const { data, isLoading, error, refetch } = useQuery('product', () => fetchData('/api/v1/products', 'GET'))
+  const { data, isLoading, error, refetch } = useQuery('product', () => fetchData(`${BASE_URL}/api/v1/products`, 'GET'))
   const { data: categoryData, isLoading: loading, refetch: refetching } =
-    useQuery('category', () => fetchData('/api/v1/products/categories/category', 'GET'))
+    useQuery('category', () => fetchData(`${BASE_URL}/api/v1/products/categories/category`, 'GET'))
   return (
     <main className='container'>
       {

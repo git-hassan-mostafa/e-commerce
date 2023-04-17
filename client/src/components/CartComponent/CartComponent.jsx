@@ -8,6 +8,7 @@ import { fetchData } from '../../hooks/hooks';
 
 import iphone from '../../assets/iphone.jpg'
 import { Link } from 'react-router-dom';
+import { BASE_URL } from '../../variables.env';
 
 const CartComponent = ({data,refetch}) => {
 
@@ -17,7 +18,7 @@ const CartComponent = ({data,refetch}) => {
     const formattedDate = date.toLocaleDateString('en-US', options); // Format the date string according to the options
     const [open,setOpen]=useState(false)
 
-    const {data:removeData,isLoading,refetch:removingRefetch}=useQuery(['delete',data],()=>fetchData(`/api/v1/product/cart/${data?.id}`,'DELETE'),{
+    const {data:removeData,isLoading,refetch:removingRefetch}=useQuery(['delete',data],()=>fetchData(`${BASE_URL}/api/v1/product/cart/${data?.id}`,'DELETE'),{
         enabled:false
     })
 
@@ -53,7 +54,7 @@ const CartComponent = ({data,refetch}) => {
                 width:'100px',
                 height:'100px',
             }}
-             src={`/${data?.product?.photo?.filename}`}
+             src={`${BASE_URL}/${data?.product?.photo?.filename}`}
               />
               </Link>
           </ListItemAvatar>

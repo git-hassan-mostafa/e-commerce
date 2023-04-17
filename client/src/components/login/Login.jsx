@@ -7,6 +7,7 @@ import './auth.css';
 import { useTheme } from '@emotion/react';
 import LoadingButton from '@mui/lab/LoadingButton/LoadingButton';
 import { Alert, Snackbar } from '@mui/material';
+import { BASE_URL } from '../../variables.env';
 
 
 const Login = () => {
@@ -17,7 +18,7 @@ const Login = () => {
     // fetching function
     const fetchLogin = async (body) => {
         try {
-            const response = await fetch('/api/v1/auth/login', {
+            const response = await fetch(`${BASE_URL}/api/v1/auth/login`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'

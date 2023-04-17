@@ -4,6 +4,7 @@ import { Avatar, List, ListItem, ListItemAvatar, ListItemText, Stack } from '@mu
 import React, { useState } from 'react';
 
 import { Link } from 'react-router-dom';
+import { BASE_URL } from '../../variables.env';
 
 const SupplierOrdersComponent = ({ data }) => {
     const date = new Date(data?.createdAt); // Convert the string to a Date object
@@ -38,7 +39,7 @@ const SupplierOrdersComponent = ({ data }) => {
                                 width: '100px',
                                 height: '100px',
                             }}
-                                src={`/${data?.product?.photo?.filename}`}
+                                src={`${BASE_URL}/${data?.product?.photo?.filename}`}
                             />
                         </Link>
                     </ListItemAvatar>

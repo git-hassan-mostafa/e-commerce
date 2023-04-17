@@ -6,8 +6,9 @@ import { useQuery } from 'react-query'
 import { fetchData } from '../../hooks/hooks'
 import FullProductCard from '../fullProductCard/FullProductCard'
 import { Link } from 'react-router-dom'
+import { BASE_URL } from '../../variables.env'
 const ProductsSliders = ({ data: propData }) => {
-    const { data, isLoading, } = useQuery(['product', propData], () => fetchData(`/api/v1/products?category=${propData}&page=1`, 'GET'), {
+    const { data, isLoading, } = useQuery(['product', propData], () => fetchData(`${BASE_URL}/api/v1/products?category=${propData}&page=1`, 'GET'), {
         enabled: !!propData,
         cacheTime:10
     })

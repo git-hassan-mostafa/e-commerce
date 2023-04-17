@@ -6,9 +6,10 @@ import { fetchData, useInfiniteFetching } from '../../hooks/hooks'
 import './orders.css'
 import OrderedListComponent from '../../components/OrderedListComponent/OrderedListComponent'
 import ProgressCircule, { ProgressCirculeInline } from '../../components/progressCircule/ProgressCircule'
+import { BASE_URL } from '../../variables.env'
 
 const Orders = () => {
-  const { data, isLoading, isFetching, refetch, loadMore, hasNext } = useInfiniteFetching('/api/v1/product/order')
+  const { data, isLoading, isFetching, refetch, loadMore, hasNext } = useInfiniteFetching(`${BASE_URL}/api/v1/product/order`)
 
   useEffect(() => {
     window.addEventListener('scroll', function () {

@@ -21,6 +21,7 @@ import { BsFillPeopleFill } from 'react-icons/bs'
 import LoadingButton from '@mui/lab/LoadingButton';
 import { useQuery } from 'react-query';
 import FullProductCard from '../../components/fullProductCard/FullProductCard';
+import { BASE_URL } from '../../variables.env';
 
 // import required modules
 const MemoizedRating = memo(Rating);
@@ -46,25 +47,25 @@ const ProductDetails = () => {
         window.scrollTo(0, 0);
     }, [])
 
-    const { data, isLoading } = useQuery([state, 'suggested'], () => fetchData(`/api/v1/products?category=${state?.category}&page=1`))
+    const { data, isLoading } = useQuery([state, 'suggested'], () => fetchData(`${BASE_URL}/api/v1/products?category=${state?.category}&page=1`))
 
     const fileredData = data?.data?.filter(data => data?.id !== state?.id)
 
     // for buy now 
     const { data: buyData, isLoading: buyIsLoading, refetch: buyRefetch, isFetching: buyIsFetching } = useQuery([state, 'buy'],
-        () => fetchData(`/api/v1/product/order?quantity=${quantity}&id=${state?._id}`, 'POST'), {
+        () => fetchData(`${BASE_URL}/api/v1/product/order?quantity=${quantity}&id=${state?._id}`, 'POST'), {
         enabled: false
     })
 
     // for add to cart
     const { data: cartData, isLoading: cartIsLoading, refetch: cartRefetch, isFetching: cartIsFetching } = useQuery([state, 'cart'],
-        () => fetchData(`/api/v1/product/cart?id=${state?.id}`, 'POST'), {
+        () => fetchData(`${BASE_URL}/api/v1/product/cart?id=${state?.id}`, 'POST'), {
         enabled: false
     })
 
     //for rating 
     const { data: ratingData, isLoading: ratingIsLoading, refetch: ratingRefetch, isFetching: ratingIsFetching } = useQuery([state, 'rating'],
-        () => fetchData(`/api/v1/products/${state._id}/rating`, 'PATCH', { rating: ratingValue }), {
+        () => fetchData(`${BASE_URL}/api/v1/products/${state._id}/rating`, 'PATCH', { rating: ratingValue }), {
         enabled: false
     })
 
@@ -103,8 +104,8 @@ const ProductDetails = () => {
                 <Swiper navigation={true} slidesPerView={1} modules={[Navigation]} className="mySwiper">
                     {
                         state?.images?.map(image => (
-                            <SwiperSlide key={image?.filename} >
-                                <img className='image-swiper' src={`/${image?.filename}`} alt="" />
+                            <SwiperSlide key={`${BASE_URL}/${image?.filename}`} >
+                                <img className='image-swiper' src={`${BASE_URL}/${image?.filename}`} alt="" />
                             </SwiperSlide>
                         ))
                     }
@@ -112,7 +113,7 @@ const ProductDetails = () => {
             </div>
             <section className='product-details'>
                 <div className="product-image">
-                    <img src={`/${state?.photo?.filename}`} alt="" />
+                    <img src={`${BASE_URL}/${state?.photo?.filename}`} alt="" />
                 </div>
                 <div className="product-info">
                     <h2> {state?.title?.toUpperCase()} </h2>

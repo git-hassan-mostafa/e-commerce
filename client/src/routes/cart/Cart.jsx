@@ -1,14 +1,13 @@
-import { Avatar, CircularProgress, List, ListItem, ListItemAvatar, ListItemText } from '@mui/material'
 import React, { useEffect } from 'react'
-import { useInfiniteQuery, useQuery } from 'react-query'
 import CartComponent from '../../components/CartComponent/CartComponent'
-import { fetchData, useInfiniteFetching } from '../../hooks/hooks'
+import { useInfiniteFetching } from '../../hooks/hooks'
 import './cart.css'
 import ProgressCircule, { ProgressCirculeInline } from '../../components/progressCircule/ProgressCircule'
+import { BASE_URL } from '../../variables.env'
 
 const Cart = () => {
 
-  const { data, isLoading, isFetching, refetch, loadMore, hasNext } = useInfiniteFetching('/api/v1/product/cart')
+  const { data, isLoading, isFetching, refetch, loadMore, hasNext } = useInfiniteFetching(`${BASE_URL}/api/v1/product/cart`)
 
   useEffect(() => {
     window.addEventListener('scroll', function () {

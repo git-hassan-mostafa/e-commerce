@@ -7,6 +7,7 @@ import { fetchUser } from '../../redux/userSlice';
 import { Alert, Snackbar } from '@mui/material';
 import LoadingButton from '@mui/lab/LoadingButton/LoadingButton';
 import { useTheme } from '@emotion/react';
+import { BASE_URL } from '../../variables.env';
 const Signup = () => {
     const [photo, setPhoto] = useState('')
     const [open, setOpen] = useState(false)
@@ -20,7 +21,7 @@ const Signup = () => {
     //signup function of the usequery
     const fetchSignup = async (body) => {
         try {
-            const response = await fetch('/api/v1/auth/signup', {
+            const response = await fetch(`${BASE_URL}/api/v1/auth/signup`, {
                 method: 'POST',
                 credentials: 'include',
                 body

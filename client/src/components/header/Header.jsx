@@ -11,6 +11,7 @@ import { memo } from 'react';
 import { Avatar } from '@mui/material';
 import { useTheme } from '@emotion/react';
 import icon from '../../assets/icon.ico'
+import { BASE_URL } from '../../variables.env';
 
 const Header = () => {
   const { user, status } = useSelector(state => state.user)
@@ -55,7 +56,7 @@ const Header = () => {
                   <Link to={'/profile'} className='link'>
                     {
                       user?.data?.photo?.filename ?
-                        <img className='profile' src={`/${user?.data?.photo?.filename}`} alt="" />
+                        <img className='profile' src={`${BASE_URL}/${user?.data?.photo?.filename}`} alt="" />
                         : <Avatar sx={{
                           bgcolor:theme.palette.primary.main
                         }} className='profile'> {user?.data?.firstname?.charAt(0).toUpperCase()} </Avatar>

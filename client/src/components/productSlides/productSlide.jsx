@@ -1,13 +1,14 @@
 import React from 'react'
 import './productSlide.css'
 import {Link} from 'react-router-dom'
+import { BASE_URL } from '../../variables.env'
 
 
 const ProductSlide = ({data}) => {
   console.log(data?.photo?.filename)
   return (
     <div className='product-slide' style={{
-      backgroundImage:`url(/${data?.photo?.filename})`
+      backgroundImage:`url(${BASE_URL}/${data?.photo?.filename})`
     }}>
         <div className="product-category">
            {data?.category.toUpperCase()} 

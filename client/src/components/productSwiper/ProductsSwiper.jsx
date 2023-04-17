@@ -14,7 +14,7 @@ import { Navigation } from "swiper";
 import ProductSlide from "../productSlides/productSlide";
 
 export default function SwiperSlides({ data, isLoading, error, refetch }) {
-    console.log(data)
+
     return (
         <div className="swiperContainer">
             <Swiper navigation={true} slidesPerView={1} modules={[Navigation]} className="mySwiper">

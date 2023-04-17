@@ -14,6 +14,7 @@ import { Swiper, SwiperSlide } from 'swiper/react'
 import { BiImageAdd } from 'react-icons/bi'
 import { useQuery } from 'react-query'
 import LoadingButton from '@mui/lab/LoadingButton/LoadingButton'
+import { BASE_URL } from '../../variables.env'
 
 const AddProduct = () => {
     const theme = useTheme()
@@ -61,7 +62,7 @@ const AddProduct = () => {
         try {
             const headers = new Headers();
             headers.append('Content-Type', 'multipart/form-data');
-            const response = await fetch('/api/v1/supplier/products', {
+            const response = await fetch(`${BASE_URL}/api/v1/supplier/products`, {
                 method: 'POST',
                 credentials: 'include',
                 body,

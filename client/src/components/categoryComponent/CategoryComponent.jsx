@@ -5,6 +5,7 @@ import React from 'react';
 
 import iphone from '../../assets/iphone.jpg';
 import { Link } from 'react-router-dom'
+import { BASE_URL } from '../../variables.env';
 
 const CategoryComponent = ({ data }) => {
   // console.log(data)
@@ -38,7 +39,7 @@ const CategoryComponent = ({ data }) => {
               <Avatar sx={{
                 width: '100px',
                 height: '100px',
-              }} src={`/${data?.photo?.filename}`} />
+              }} src={`${BASE_URL}/${data?.photo?.filename}`} />
             </Link>
           </ListItemAvatar>
           <Stack sx={{ display: 'block' }}>

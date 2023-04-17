@@ -11,6 +11,7 @@ import AddProduct from '../addProduct/AddProduct';
 import SupplierProducts from '../SupplierProducts/SupplierProducts';
 import SupplierOrdersComponent from '../SupplierOrdersComponent/SupplierOrdersComponent';
 import SupplierProductsOrders from '../SupplierProductsOrders/SupplierProductsOrders';
+import { BASE_URL } from '../../variables.env';
 
 
 const SupplierOwnProfile = () => {
@@ -27,7 +28,7 @@ const SupplierOwnProfile = () => {
       <div className="profile-info">
         {
           user?.data?.photo?.filename ?
-            <img src={`/${user?.data?.photo?.filename}`} alt="" />
+            <img src={`${BASE_URL}/${user?.data?.photo?.filename}`} alt="" />
             : <Avatar className='avatar'> {user?.data?.firstname?.charAt(0).toUpperCase()} </Avatar>
         }        <div className="user-info">
           <h4> name : {user?.data?.firstname} {user?.data?.lastname} </h4>

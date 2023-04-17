@@ -6,6 +6,7 @@ import { FaProductHunt } from 'react-icons/fa'
 import { AiFillEdit } from 'react-icons/ai'
 import { Link } from 'react-router-dom'
 import { Avatar } from '@mui/material'
+import { BASE_URL } from '../../variables.env'
 
 
 const SimpleProfile = () => {
@@ -15,7 +16,7 @@ const SimpleProfile = () => {
       <div className="profile-info">
         {
           user?.data?.photo?.filename ?
-            <img src={`/${user?.data?.photo?.filename}`} alt="" />
+            <img src={`${BASE_URL}/${user?.data?.photo?.filename}`} alt="" />
             : <Avatar className='avatar'> {user?.data?.firstname?.charAt(0).toUpperCase()} </Avatar>
         }
         <div className="user-info">

@@ -5,6 +5,7 @@ import React from 'react';
 
 import iphone from '../../assets/iphone.jpg';
 import { Link } from 'react-router-dom'
+import { BASE_URL } from '../../variables.env';
 
 const SearchComponent = ({ data, refetch }) => {
   const date = new Date(data?.createdAt); // Convert the string to a Date object
@@ -37,7 +38,7 @@ const SearchComponent = ({ data, refetch }) => {
               <Avatar sx={{
                 width: '100px',
                 height: '100px',
-              }} src={`/${data?.photo?.filename}`} />
+              }} src={`${BASE_URL}/${data?.photo?.filename}`} />
             </Link>
           </ListItemAvatar>
           <Stack sx={{ display: 'block' }}>

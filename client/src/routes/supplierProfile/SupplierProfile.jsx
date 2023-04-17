@@ -6,10 +6,11 @@ import { useInfiniteFetching } from '../../hooks/hooks'
 import FullProductCard from '../../components/fullProductCard/FullProductCard'
 import { ProgressCirculeInline } from '../../components/progressCircule/ProgressCircule'
 import { Avatar } from '@mui/material'
+import { BASE_URL } from '../../variables.env'
 
 const SupplierProfile = () => {
     const { state } = useLocation()
-    const { data, isLoading, isFetching, loadMore, hasNext } = useInfiniteFetching(`/api/v1/supplier/products/product/${state?.id}`)
+    const { data, isLoading, isFetching, loadMore, hasNext } = useInfiniteFetching(`${BASE_URL}/api/v1/supplier/products/product/${state?.id}`)
     useEffect(() => {
         window.addEventListener('scroll', function () {
             // Get the height of the document, accounting for scroll position

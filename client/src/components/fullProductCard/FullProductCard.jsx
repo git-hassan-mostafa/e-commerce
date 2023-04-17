@@ -7,11 +7,12 @@ import { fetchData } from '../../hooks/hooks';
 import { Link } from 'react-router-dom'
 import { Alert, Button, Snackbar } from '@mui/material';
 import LoadingButton from '@mui/lab/LoadingButton';
+import { BASE_URL } from '../../variables.env';
 
 const FullProductCard = ({ data }) => {
     const [open, setOpen] = useState(false)
 
-    const { data: addToCartData, isLoading, refetch , isFetching } = useQuery([data, 'add-to-cart'], () => fetchData(`/api/v1/product/cart?id=${data?.id}`, 'POST'), {
+    const { data: addToCartData, isLoading, refetch , isFetching } = useQuery([data, 'add-to-cart'], () => fetchData(`${BASE_URL}/api/v1/product/cart?id=${data?.id}`, 'POST'), {
         enabled: false
     })
     const addToCart = () => {
@@ -29,7 +30,7 @@ const FullProductCard = ({ data }) => {
             <div className="total-price">
                 ${data?.price}
             </div>
-            <img src={`http://localhost:8000/${data?.photo?.filename}`} alt="" />
+            <img src={`${BASE_URL}/${data?.photo?.filename}`} alt="" />
             <h4> {data?.title.charAt(0).toUpperCase() + data?.title?.slice(1)} </h4>
             <p>{data?.description.slice(0,20)}...</p>
             <div className='product-rating-button' >

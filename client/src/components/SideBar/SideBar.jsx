@@ -9,6 +9,7 @@ import { togglingSideBar } from '../../redux/stateSlice'
 import {AiOutlineShoppingCart} from 'react-icons/ai'
 import {FaProductHunt} from 'react-icons/fa'
 import Avatar from '@mui/material/Avatar';
+import { BASE_URL } from '../../variables.env'
 const SideBar = () => {
     const dispatch = useDispatch()
     const navigate = useNavigate()
@@ -46,7 +47,7 @@ const SideBar = () => {
                                     {/* <CgProfile className='icon' /> */}
                                     {
                                         user?.data?.photo?.filename ?
-                                         <img src={`/${user?.data?.photo?.filename}`} alt="" />
+                                         <img src={`${BASE_URL}/${user?.data?.photo?.filename}`} alt="" />
                                          : <Avatar> {user?.data?.firstname?.charAt(0).toUpperCase()} </Avatar>
                                     }
                                     

@@ -3,8 +3,9 @@ import { useInfiniteFetching } from '../../hooks/hooks';
 import ProductSupplierComponent from '../ProductSupplierComponent/ProductSupplierComponent';
 import './supplierProducts.css'
 import ProgressCircule, { ProgressCirculeInline } from '../progressCircule/ProgressCircule';
+import { BASE_URL } from '../../variables.env';
 const SupplierProducts = () => {
-  const { data, isLoading, isFetching, refetch, loadMore, hasNext } = useInfiniteFetching('/api/v1/supplier/products')
+  const { data, isLoading, isFetching, refetch, loadMore, hasNext } = useInfiniteFetching(`${BASE_URL}/api/v1/supplier/products`)
 
   useEffect(() => {
     window.addEventListener('scroll', function () {

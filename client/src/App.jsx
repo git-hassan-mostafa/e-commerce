@@ -1,11 +1,10 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect } from 'react'
 import Header from './components/header/Header'
 import MainRoutes from './routes/MainRoutes'
 import './App.css'
-import { useDispatch, useSelector } from 'react-redux'
+import { useDispatch } from 'react-redux'
 import { fetchUser } from './redux/userSlice'
-import { Navigate, useLocation, useNavigate } from 'react-router-dom'
-import SideBar from './components/SideBar/SideBar'
+import { useLocation, useNavigate } from 'react-router-dom'
 import { createTheme } from '@mui/material'
 
 export const theme = createTheme({

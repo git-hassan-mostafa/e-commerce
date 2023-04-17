@@ -1,4 +1,5 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit'
+import { BASE_URL } from '../variables.env'
 
 export const userSlice = createSlice({
   name: 'user',
@@ -25,11 +26,12 @@ export const userSlice = createSlice({
   }
 })
 export const fetchUser = createAsyncThunk('user/fetchUser', async () => {
-  const response = await fetch('/api/v1/user', {
+  const response = await fetch(`${BASE_URL}/api/v1/user`, {
     credentials: 'include'
   })
   const data = await response.json()
   console.log(data)
+  console.log(BASE_URL)
   return data
 })
 export const { logout , toggleSideBar } = userSlice.actions

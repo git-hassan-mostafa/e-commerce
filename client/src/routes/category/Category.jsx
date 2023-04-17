@@ -6,13 +6,14 @@ import './category.css'
 import { useInfiniteQuery, useQuery } from 'react-query'
 import { fetchData, useInfiniteFetching } from '../../hooks/hooks'
 import ProgressCircule, { ProgressCirculeInline } from '../../components/progressCircule/ProgressCircule'
+import { BASE_URL } from '../../variables.env'
 const Category = () => {
   const { p } = useParams()
   const { state } = useLocation()
   // const { data, isLoading, refetch } = useQuery(['category', p],
   //   () => fetchData(`/api/v1/products/categories/${state[0]?.category}?page=1&limit=2`, 'GET'))
 
-  const { data, isLoading, loadMore, isFetching,refetch,hasNext } = useInfiniteFetching(`/api/v1/products/categories/${state[0]?.category}`);
+  const { data, isLoading, loadMore, isFetching,refetch,hasNext } = useInfiniteFetching(`${BASE_URL}/api/v1/products/categories/${state[0]?.category}`);
 
   useEffect(()=>{
     window.addEventListener('scroll', function() {

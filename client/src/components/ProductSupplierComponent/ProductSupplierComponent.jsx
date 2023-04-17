@@ -7,6 +7,7 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useQuery } from 'react-query';
 import { fetchData } from '../../hooks/hooks';
+import { BASE_URL } from '../../variables.env';
 
 const ProductSupplierComponent = ({ data, refetch }) => {
     const date = new Date(data?.createdAt); // Convert the string to a Date object
@@ -31,7 +32,7 @@ const ProductSupplierComponent = ({ data, refetch }) => {
         color: '#17202A',
         gap: '20px'
     }
-    const { data: removeData, isFetching, refetch: removeRefetch } = useQuery(['remove-data', data], () => fetchData(`/api/v1/supplier/products/${data?.id}`, 'DELETE'), {
+    const { data: removeData, isFetching, refetch: removeRefetch } = useQuery(['remove-data', data], () => fetchData(`${BASE_URL}/api/v1/supplier/products/${data?.id}`, 'DELETE'), {
         enabled: false
     })
 
@@ -53,7 +54,7 @@ const ProductSupplierComponent = ({ data, refetch }) => {
                                 width: '100px',
                                 height: '100px',
                             }}
-                                src={`/${data?.photo?.filename}`}
+                                src={`${BASE_URL}/${data?.photo?.filename}`}
                             />
                         </Link>
                     </ListItemAvatar>
