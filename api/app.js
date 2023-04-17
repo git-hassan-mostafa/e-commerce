@@ -51,6 +51,10 @@ app.get('/', (req, res) => {
     res.send('hello this is my e commerce backend')
 })
 
+app.use((req, res, next) => {
+    res.header('Access-Control-Allow-Origin', '*');
+    next()
+})
 
 //connect to the data base
 const connect = async () => {
