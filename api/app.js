@@ -19,7 +19,7 @@ const bodyParser = require('body-parser')
 app.use(express.static('uploads'));
 
 app.use(cors({
-    origin: '*',
+    origin: 'https://hassanmostafa-e-commerce.netlify.app',
     credentials: true,
 }))
 
@@ -52,7 +52,7 @@ app.get('/', (req, res) => {
 })
 
 app.use((req, res, next) => {
-    res.header('Access-Control-Allow-Origin', '*');
+    res.header('Access-Control-Allow-Origin', 'https://hassanmostafa-e-commerce.netlify.app/home');
     next()
 })
 
