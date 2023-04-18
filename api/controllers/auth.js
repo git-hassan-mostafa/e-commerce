@@ -98,7 +98,7 @@ const logout=(req,res,next)=>{
     try {
         return res.cookie('access_token', '', {
             sameSite:'none',
-            httpOnly: true,
+            // httpOnly: true,
             maxAge: 24 * 30 * 60 * 60 * 1000,
             secure: true
         }).status(200).json({ message: 'logged out ' })

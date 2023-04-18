@@ -20,6 +20,7 @@ app.use(express.static('uploads'));
 
 app.use(cors({
     origin: 'https://e-commerce-sable-one.vercel.app',
+    // origin:'http://localhost:5173',
     credentials: true,
 }))
 
@@ -53,6 +54,7 @@ app.get('/', (req, res) => {
 
 app.use((req, res, next) => {
     res.header('Access-Control-Allow-Origin', 'https://e-commerce-sable-one.vercel.app');
+    // res.header('Access-Control-Allow-Origin', 'http://localhost:5173');
     next()
 })
 

@@ -51,7 +51,7 @@ const Signup = () => {
         username: '',
         email: '',
         password: '',
-        isSupplier: false
+        supplier: false
     }
 
 
@@ -88,7 +88,7 @@ const Signup = () => {
                 ...state, password: action.payload
             }
             case 'ISSUPPLIER': return {
-                ...state, isSupplier: action.payload
+                ...state, supplier: action.payload
             }
         }
     }
@@ -105,7 +105,7 @@ const Signup = () => {
         formData.append('username', state.username);
         formData.append('email', state.email);
         formData.append('password', state.password);
-        formData.append('isSupplier', state.isSupplier);
+        formData.append('supplier', state.supplier);
         await refetch()
         document.querySelectorAll('input').forEach(input => {
             input.value = ''

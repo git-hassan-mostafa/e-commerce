@@ -35,7 +35,7 @@ const ProductsSliders = ({ data: propData }) => {
                 
                 </Link>
             </h2>
-            <Swiper navigation={true} spaceBetween={10} slidesPerView={slideNum.toFixed(0)} modules={[Navigation]} className="mySwiper">
+            <Swiper navigation={true} spaceBetween={10} slidesPerView={slideNum.toFixed(1)} modules={[Navigation]} className="mySwiper">
                 {
                     data?.data?.map((data, i) => <SwiperSlide key={i}>
                         {/* <div className="card"> */}

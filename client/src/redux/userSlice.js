@@ -29,7 +29,9 @@ export const fetchUser = createAsyncThunk('user/fetchUser', async () => {
   const response = await fetch(`${BASE_URL}/api/v1/user`, {
     credentials: 'include'
   })
+  console.log(response)
   const data = await response.json()
+  console.log(data)
   return data
 })
 export const { logout , toggleSideBar } = userSlice.actions
