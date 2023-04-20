@@ -28,7 +28,7 @@ const MemoizedRating = memo(Rating);
 
 const ProductDetails = () => {
     const { state } = useLocation()
-    const [quantity, setQuantity] = useState(state?.qunatity>0?1:0)
+    const [quantity, setQuantity] = useState(state?.quantity>0?1:0)
     const [ratingValue, setRatingValue] = useState(state?.totalrating)
 
     const [showRatingMessage, setShowRatingMessage] = useState(false);
