@@ -28,7 +28,7 @@ const MemoizedRating = memo(Rating);
 
 const ProductDetails = () => {
     const { state } = useLocation()
-    const [quantity, setQuantity] = useState(1)
+    const [quantity, setQuantity] = useState(state?.qunatity>0?1:0)
     const [ratingValue, setRatingValue] = useState(state?.totalrating)
 
     const [showRatingMessage, setShowRatingMessage] = useState(false);
@@ -70,8 +70,8 @@ const ProductDetails = () => {
     })
 
     const handleQuantityChange = (e) => {
-        if (e === 'plus') setQuantity(prev => prev + 1)
-        else if (e === 'minus') setQuantity(prev => prev - 1)
+        if (e === 'plus') setQuantity(prev => prev>state?.quantity-1?prev:prev+1)
+        else if (e === 'minus') setQuantity(prev => prev<=1?prev: prev - 1)
     }
 
     const addToCart = async () => {
