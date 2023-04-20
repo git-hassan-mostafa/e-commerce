@@ -12,11 +12,11 @@ const ProductsSliders = ({ data: propData }) => {
         enabled: !!propData,
         cacheTime:10
     })
-    const [slideNum, setSlideNum] = useState(window.innerWidth / 250)
+    const [slideNum, setSlideNum] = useState(window.innerWidth / 280)
     useEffect(() => {
         window.addEventListener('resize', (e) => {
-            if (e.target.innerWidth < 300) setSlideNum(1)
-            setSlideNum(e.target.innerWidth / 250)
+            if (e.target.innerWidth < 280) setSlideNum(1)
+            setSlideNum(e.target.innerWidth / 280)
         })
     })
     return (
